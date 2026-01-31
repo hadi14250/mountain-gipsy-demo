@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0F14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1a2a3a 0%, #3a5264 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #243748 0%, #456072 100%);
+}
+
+/* Base styles */
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  @apply bg-mg-dark text-mg-gray-400 font-body;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Performance: reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Ensure text is selectable - use !important to override any library styles */
+* {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+/* Re-apply to buttons and inputs where needed */
+button, input, textarea {
+  user-select: auto !important;
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(168, 197, 217, 0.4);
+  color: white;
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-mg-ice-400 via-mg-gold-500 to-mg-ice-300;
+  }
+  
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-mg-gold-500 to-mg-gold-300;
+  }
+  
+  .bg-gradient-radial-purple {
+    background: radial-gradient(ellipse at center, rgba(26, 42, 58, 0.4) 0%, transparent 70%);
+  }
+  
+  .bg-gradient-mesh {
+    background: 
+      radial-gradient(at 40% 20%, rgba(26, 42, 58, 0.3) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(255, 180, 43, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgba(36, 55, 72, 0.3) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, rgba(168, 197, 217, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(255, 180, 43, 0.1) 0px, transparent 50%);
+  }
+  
+  .glass-effect {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .glass-effect-dark {
+    @apply bg-black/30 backdrop-blur-md border border-white/5;
+  }
+  
+  .glow-purple {
+    box-shadow: 0 0 40px rgba(26, 42, 58, 0.5);
+  }
+  
+  .glow-gold {
+    box-shadow: 0 0 40px rgba(255, 180, 43, 0.3);
+  }
+
+  .glow-ice {
+    box-shadow: 0 0 40px rgba(168, 197, 217, 0.3);
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Hide scrollbar for horizontal scroll sections */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+/* Page transition */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+/* Swiper custom styles */
+.swiper-pagination-bullet {
+  @apply bg-mg-gray-600 opacity-100;
+  width: 12px;
+  height: 12px;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-mg-gold-500;
+  width: 32px;
+  border-radius: 6px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply text-mg-gold-500;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 24px;
+}
+
+/* Loading spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(134, 91, 172, 0.2);
+  border-top-color: #865BAC;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Noise texture overlay */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Parallax container */
+.parallax-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Mountain decorative shapes */
+.mountain-shape {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.mountain-shape-inverse {
+  clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+}
