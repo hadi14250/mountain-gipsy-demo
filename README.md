@@ -1,19 +1,53 @@
+<div align="center">
+
 # Mountain Gipsy
 
-Marketing website for **Mountain Gipsy** — a brand built around mindset coaching, workshops, keynotes, and adventure experiences led by Tima Deryan.
+**Marketing website for Mountain Gipsy — mindset coaching, workshops, keynotes, and adventure experiences led by Tima Deryan.**
 
-The site presents the brand story, services, blog highlights, testimonials, and contact entry points, with a multi-page React/Vite frontend styled in Tailwind CSS and animated with Framer Motion.
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![Framer Motion](https://img.shields.io/badge/Framer-Motion-0055FF?logo=framer&logoColor=white)](https://www.framer.com/motion/)
 
-## Tech stack
+</div>
 
-- **React 18** + **React Router** for the multi-page UI
-- **Vite 5** as the dev server and build tool
-- **Tailwind CSS** for styling
-- **Framer Motion** for transitions and scroll animations
-- **Swiper** for the testimonials slider
-- **react-intersection-observer** for reveal-on-scroll effects
+---
 
-## Project structure
+## Overview
+
+A multi-page React site presenting the Mountain Gipsy brand story, services, blog highlights, testimonials, and contact entry points. Styled with Tailwind CSS and brought to life with Framer Motion animations.
+
+## Tech Stack
+
+| Layer        | Tools                                                             |
+| ------------ | ----------------------------------------------------------------- |
+| Framework    | React 18 + React Router                                           |
+| Build        | Vite 5 (esbuild minification)                                     |
+| Styling      | Tailwind CSS                                                      |
+| Animation    | Framer Motion, react-intersection-observer                        |
+| UI Widgets   | Swiper (testimonials slider)                                      |
+
+## Quick Start
+
+> **Prerequisites:** Node.js 18+ and npm
+
+```bash
+npm install
+npm run dev
+```
+
+Then open [http://localhost:5173](http://localhost:5173).
+
+## Scripts
+
+| Command           | Description                                      |
+| ----------------- | ------------------------------------------------ |
+| `npm run dev`     | Start the Vite dev server with HMR               |
+| `npm run build`   | Production build (minified with esbuild)         |
+| `npm run preview` | Preview the production build locally             |
+| `npm run lint`    | Run ESLint across `.js` and `.jsx` files         |
+
+## Project Structure
 
 ```
 .
@@ -31,26 +65,6 @@ The site presents the brand story, services, blog highlights, testimonials, and 
 └── vite.config.js
 ```
 
-## Getting started
-
-Prerequisites: Node.js 18+ and npm.
-
-```bash
-npm install
-npm run dev
-```
-
-The dev server runs on Vite's default port (http://localhost:5173).
-
-## Available scripts
-
-| Command           | Description                                      |
-| ----------------- | ------------------------------------------------ |
-| `npm run dev`     | Start the Vite dev server with HMR               |
-| `npm run build`   | Production build (minified with esbuild)         |
-| `npm run preview` | Preview the production build locally             |
-| `npm run lint`    | Run ESLint across `.js` and `.jsx` files         |
-
 ## Pages
 
 - **Home** — hero, stats, services preview, testimonials, blog preview, CTA
@@ -65,9 +79,17 @@ All imagery (brand logo, founder photography, client logos, social icons) lives 
 
 ## Deployment
 
-The build output is a static bundle in `dist/` and can be hosted on any static host (Netlify, Vercel, Cloudflare Pages, GitHub Pages, S3, etc.):
+The build output is a static bundle in `dist/` and can be hosted on any static host — Netlify, Vercel, Cloudflare Pages, GitHub Pages, S3, etc.
 
 ```bash
 npm run build
 npm run preview   # optional local smoke test
 ```
+
+---
+
+<div align="center">
+
+Built with care for **Mountain Gipsy** ⛰️
+
+</div>
